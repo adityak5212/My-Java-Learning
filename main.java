@@ -2,16 +2,17 @@ public class main {
 
     public static void main(String[] args){
 
-        // THIS IS MY FIRST PROGRAM
+       int year = 2026;
+       double price = 16.73;
+       char currency = '$';
+       boolean isStudent = true;
+       boolean forSale = false;
 
-        /*
-           this is a multi-line comment
-         */
-
-        System.out.println("i will make more projects!");
-        System.out.println("i am surprised to learn all of this");
-        System.out.println("i am going to keep learning.");
-
+        System.out.println("this year is " + year);
+        System.out.println("$" + price);
+        System.out.println(currency);
+        System.out.println(isStudent);
+        System.out.println(forSale);
 
     }
 }
