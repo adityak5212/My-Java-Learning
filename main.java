@@ -1,48 +1,34 @@
-import java.util.Scanner;
-public class main {
-    public static void main (String[] args) {
+import java.util.Random;
+public class main{
+    public static void main(String[] argc){
 
-        // if statement =  performs  block of code if its condition is true
+        Random random = new Random();
 
-        Scanner scanner = new Scanner (System.in);
-        String name;
-        int age = 50;
-        boolean isStudent;
-        System.out.println("enter your name: 😊");
-        name = scanner.nextLine();
-        System.out.println("enter your age: 😒");
-        age = scanner.nextInt();
-        System.out.println("are you a student (true /false): 👍");
-        isStudent = scanner.nextBoolean();
-        if(name.isEmpty()){
-            System.out.println("you didn't enter your name 🙌");
+        int number1;
+        int number2;
+        int number3;
+        double number;
+        boolean isHeads;
+
+
+        number1 = random.nextInt(1,86);
+        number2 = random.nextInt(1,432);
+        number3 = random.nextInt(1,435);
+        number = random.nextDouble(1,765);
+        isHeads = random.nextBoolean();
+
+        System.out.println(number1);
+        System.out.println(number2);
+        System.out.println(number3);
+        System.out.println(number);
+
+        if(isHeads){
+            System.out.println("Heads");
         }
         else{
-            System.out.println("hello " + name + "!");
+            System.out.println("tails");
         }
 
-        if(age >= 65){
-            System.out.println("you are a senior! 👴");
-        }
-        else if(age >=18){
-            System.out.println("you are an adult! 🧑‍🦰");
-        }
-        else if(age > 0){
-            System.out.println("you haven't been born yet! ❤️");
-        }
-        else if (age== 0) {
-            System.out.println("you are a baby! 👶");
-        }
-        else{
-            System.out.println("you are a child! 👼");
-        }
-        if(isStudent){
-            System.out.println("you are a student! 🧑‍🎓");
-        }
-        else{
-            System.out.println("you are not a student 🧑‍🎓");
-        }
-        scanner.close();
 
     }
 }
