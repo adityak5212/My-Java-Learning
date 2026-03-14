@@ -1,34 +1,30 @@
-
+import java.util.Scanner;
 public class main{
     public static void main(String[] argc){
 
-        boolean isStudent = false;
-        boolean isSenior = true;
-        double price = 2;
+        // .substring() = A method used to extract a portion of a string
+        //                .substring(start, end)
 
-        if(isStudent){
-            if(isSenior){
-                System.out.println("you get a student discount of 10%");
-                System.out.println("you get a senior discont of 30%");
-                price = price - (price * 0.30);
-            }
-            else{
-                System.out.println("you get a student discount 10%");
-                price = price - (price * 0.10);
-            }
+        Scanner scanner = new Scanner(System.in);
 
+        String email;
+        String username;
+        String domain;
+
+        System.out.println("Enter your email: ");
+        email = scanner.nextLine();
+
+        if(email.contains("@")){
+            username = email.substring(0, email.indexOf("@"));
+            domain = email.substring(0, email.indexOf("@") +1);
+
+            System.out.println(username);
+            System.out.println(domain);
         }
         else{
-            if(isSenior){
-                System.out.println("you get a senior discount of 30%");
-                price = price - (price * 0.30);
-            }
+            System.out.println("Emails must camtain @");
         }
-        System.out.printf("the price of ticket is: %f", price);
-
-
-
-
+        scanner.close();
 
     }
 }
