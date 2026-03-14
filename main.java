@@ -2,28 +2,30 @@
 public class main{
     public static void main(String[] argc){
 
-        // printf() = is a method used to format outou
-        // %[flags] [width][.precision] [specifier-character]
+        boolean isStudent = false;
+        boolean isSenior = true;
+        double price = 2;
 
-        String name = "Ayush";
-        char firstLetter = 'A';
-        int age = 22;
-        double height = 178.5;
-        boolean isEmployed = true;
+        if(isStudent){
+            if(isSenior){
+                System.out.println("you get a student discount of 10%");
+                System.out.println("you get a senior discont of 30%");
+                price = price - (price * 0.30);
+            }
+            else{
+                System.out.println("you get a student discount 10%");
+                price = price - (price * 0.10);
+            }
 
-        System.out.printf("Hello %s\n", name);
-        System.out.printf("your name start with a %c\n", firstLetter);
-        System.out.printf("you are %d yers old\n", age);
-        System.out.printf("you are %fcm tall\n", height);
-        System.out.printf("Employed: %b\n", isEmployed);
+        }
+        else{
+            if(isSenior){
+                System.out.println("you get a senior discount of 30%");
+                price = price - (price * 0.30);
+            }
+        }
+        System.out.printf("the price of ticket is: %f", price);
 
-        double price1 = 27.3;
-        double price2 =32;
-        double price3 =23.3;
-
-        System.out.printf("% 2f\n", price1);
-        System.out.printf("% 2f\n", price2);
-        System.out.printf("2%f\n", price3);
 
 
 
