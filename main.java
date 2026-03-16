@@ -1,30 +1,29 @@
-import java.util.Scanner;
-public class main{
-    public static void main(String[] argc){
+public class main {
+    public static void main (String[] args){
 
-        // .substring() = A method used to extract a portion of a string
-        //                .substring(start, end)
+        // ternary operator ? = Return 1 of 2 values if a condition is true
 
-        Scanner scanner = new Scanner(System.in);
+        // variable = (condition) ? ifTrue : ifFalse;
 
-        String email;
-        String username;
-        String domain;
+        int score = 75;
+        String passOrFail = (score >= 60) ? "Pass" : "Fail";
+        int number = 3;
+        String evenOrOdd = (number % 2 == 0) ? "EVEN" : "ODD";
+        int hours = 13;
+        String timeOfDay =(hours < 12) ?"A.M." : "P.M.";
+        int income = 30000;
+        double taxRate = (income >= 20000) ? 5.8 : 9.8;
+        System.out.println(taxRate);
 
-        System.out.println("Enter your email: ");
-        email = scanner.nextLine();
+        if(score >= 60){
+            System.out.println("Pass");
+       }
+        else{System.out.println("Fail");
+       }
 
-        if(email.contains("@")){
-            username = email.substring(0, email.indexOf("@"));
-            domain = email.substring(0, email.indexOf("@") +1);
+        System.out.println(passOrFail);
+        System.out.println(evenOrOdd);
+        System.out.println(timeOfDay);
 
-            System.out.println(username);
-            System.out.println(domain);
-        }
-        else{
-            System.out.println("Emails must camtain @");
-        }
-        scanner.close();
-
-    }
+     }
 }
