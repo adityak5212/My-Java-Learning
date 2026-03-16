@@ -1,29 +1,28 @@
+import java.sql.SQLOutput;
+import java.util.Scanner;
 public class main {
     public static void main (String[] args){
 
-        // ternary operator ? = Return 1 of 2 values if a condition is true
+        Scanner scanner = new Scanner (System.in);
 
-        // variable = (condition) ? ifTrue : ifFalse;
+        double temp;
+        double newTemp;
+        String unit;
 
-        int score = 75;
-        String passOrFail = (score >= 60) ? "Pass" : "Fail";
-        int number = 3;
-        String evenOrOdd = (number % 2 == 0) ? "EVEN" : "ODD";
-        int hours = 13;
-        String timeOfDay =(hours < 12) ?"A.M." : "P.M.";
-        int income = 30000;
-        double taxRate = (income >= 20000) ? 5.8 : 9.8;
-        System.out.println(taxRate);
+        System.out.print("Enter the temprature: ");
+        temp = scanner.nextDouble();
 
-        if(score >= 60){
-            System.out.println("Pass");
-       }
-        else{System.out.println("Fail");
-       }
+        System.out.print("Convert to calsius or fahreheit? (C or F): ");
+        unit = scanner.next().toUpperCase();
 
-        System.out.println(passOrFail);
-        System.out.println(evenOrOdd);
-        System.out.println(timeOfDay);
+        // (condition)n ? ture : false
+
+        newTemp = (unit.equals("C")) ? (temp -32) * 5 / 9 : (temp * 5 / 9) +32;
+
+        System.out.printf("%.1f°%s", newTemp,unit);
+
+
+        scanner.close();
 
      }
 }
