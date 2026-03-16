@@ -1,28 +1,30 @@
-import java.sql.SQLOutput;
+import java.util.Scanner;
 import java.util.Scanner;
 public class main {
     public static void main (String[] args){
 
+        // Enhanced switch = A replacement to many else if statements
+        //                   (Java14 feature)
+
         Scanner scanner = new Scanner (System.in);
 
-        double temp;
-        double newTemp;
-        String unit;
+        System.out.print("Enter the day of a week ");
 
-        System.out.print("Enter the temprature: ");
-        temp = scanner.nextDouble();
+        String day = scanner.nextLine();
 
-        System.out.print("Convert to calsius or fahreheit? (C or F): ");
-        unit = scanner.next().toUpperCase();
-
-        // (condition)n ? ture : false
-
-        newTemp = (unit.equals("C")) ? (temp -32) * 5 / 9 : (temp * 5 / 9) +32;
-
-        System.out.printf("%.1f°%s", newTemp,unit);
+        switch (day){
+            case "Monday" -> System.out.println("It is a weekday😑");
+            case "Tuesday" -> System.out.println("It is a weekday🤦");
+            case "Wednesday" -> System.out.println("It is a weekday😑");
+            case "Thursday" -> System.out.println("It is a weekday🤦");
+            case "Friday" -> System.out.println("It is a weekday😑");
+            case "saturday" -> System.out.println("It is a weekday😊");
+            case "Sunday" -> System.out.println("It is a weekday😊");
+            default -> System.out.println(day + " is not a day");
 
 
-        scanner.close();
+
+        }
 
      }
 }
