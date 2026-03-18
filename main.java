@@ -1,30 +1,45 @@
 import java.util.Scanner;
-import java.util.Scanner;
-public class main {
-    public static void main (String[] args){
+public class main{
+    public static void main(String[] argc) {
+        Scanner scanner = new Scanner(System.in);
 
-        // Enhanced switch = A replacement to many else if statements
-        //                   (Java14 feature)
+        // && = And
+        // || = OR
+        // ! = NOT
 
-        Scanner scanner = new Scanner (System.in);
+        double temp =-10;
+        boolean isSunny = true;
 
-        System.out.print("Enter the day of a week ");
-
-        String day = scanner.nextLine();
-
-        switch (day){
-            case "Monday" -> System.out.println("It is a weekday😑");
-            case "Tuesday" -> System.out.println("It is a weekday🤦");
-            case "Wednesday" -> System.out.println("It is a weekday😑");
-            case "Thursday" -> System.out.println("It is a weekday🤦");
-            case "Friday" -> System.out.println("It is a weekday😑");
-            case "saturday" -> System.out.println("It is a weekday😊");
-            case "Sunday" -> System.out.println("It is a weekday😊");
-            default -> System.out.println(day + " is not a day");
-
-
-
+        if(temp <= 30 && temp >= 0 && isSunny){
+            System.out.println("The weather is good 😊");
+            System.out.println("IT is Sunny outside☀️");
+        }
+        else if(temp <= 30 && temp >= 0 && !isSunny){
+            System.out.println("The weather is good 😊");
+            System.out.println("IT is cloudy outside🌦️");
+        }
+        else if(temp > 30 || temp < 0){
+            System.out.println("The weather is bad 😑");
         }
 
-     }
+        // username must be between 4-12 character
+        // username must not contain spaces or underscores
+
+        String username;
+
+        System.out.print("Enter your new username: ");
+        username = scanner.nextLine();
+
+        if(username.length() < 4 || username.length() > 12){
+            System.out.println("username must be between 4-12 characters");
+        }
+        else if(username.contains(" ") || username.contains("_")){
+            System.out.println("username must not contain spaces or underscores");
+        }
+        else{
+            System.out.println("welcome " + username);
+        }
+        scanner.close();
+
+    }
 }
